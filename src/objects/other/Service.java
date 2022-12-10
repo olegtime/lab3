@@ -1,8 +1,9 @@
 package objects.other;
 
+import interfaces.Openable;
 import objects.enums.*;
 import objects.persons.*;
-import objects.places.spaces.*;
+import objects.places.Space;
 
 public class Service{
 
@@ -19,15 +20,15 @@ public class Service{
         this.type = typeOfService.getTranslate();
     }
 
-    public void passingIn(Person person, Space space){
+    public void passingIn(Person person, Space space, Openable openable){
         System.out.print(this.name + " " + person.getName() + " протекала в");
-        System.out.print(space.IsItOpen() ? " открытом " : " закрытом ");
+        openable.isTheSpaceOpen();
         System.out.println(space.getName());
     }
 
-    public void passingNotIn(Person person, Space space){
+    public void passingNotIn(Person person, Space space, Openable openable){
         System.out.print(this.name + " " + person.getName() + " протекала не на");
-        System.out.print(space.IsItOpen() ? " открытом " : " закрытом ");
+        openable.isTheSpaceOpen();
         System.out.println(space.getName());
     }
 

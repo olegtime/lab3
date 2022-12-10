@@ -1,6 +1,4 @@
-package objects.places.spaces;
-
-import objects.places.Place;
+package objects.places;
 
 public class Space extends Place {
     private boolean isOpen;
@@ -9,14 +7,14 @@ public class Space extends Place {
         super(name);
         this.isOpen = isOpen;
     }
-    public boolean IsItOpen(){
-        return isOpen;
+    public boolean isOpen(){
+        return this.isOpen;
     }
 
     public boolean equals(Space space){
         if (space == null) return false;
         if (this.getClass() != space.getClass()) return false;
-        if (this.getName().equals(space.getName()) && isOpen == space.IsItOpen()) return true;
+        if (this.getName().equals(space.getName()) && isOpen == space.isOpen()) return true;
         return false;
     }
 

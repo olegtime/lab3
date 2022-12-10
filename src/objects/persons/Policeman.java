@@ -4,7 +4,7 @@ import interfaces.*;
 import objects.things.*;
 
 
-public class Policeman extends Person implements Nameable, Wasable {
+public class Policeman extends Person implements Nameable {
 
     public Policeman(String name){
         super(name);
@@ -34,14 +34,7 @@ public class Policeman extends Person implements Nameable, Wasable {
         System.out.println();
     }
 
-    @Override
-    public void was(){
-        System.out.print(" был ");
-    }
-
     public void beEquallyDressedIn(Person person1, Person person2, Thing thing){
-        System.out.print(this.getName() + " " + person1.getName());
-        was();
-        System.out.println("одет в такой же " + thing.getName() + " что и " + person2.getName());
+        System.out.println(this.getName() + " " + person1.getName() + " был одет в такой же " + thing.getName() + " что и " + person2.getName());
     }
 }
