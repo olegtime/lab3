@@ -10,6 +10,6 @@ public class Neznayka extends Person{
     }
 
     public void beSomewhereInTime(Place place, PartOfHour partOfHour, PartOfHourToMinuts partOfHourToMinuts){
-        System.out.println("Через " + partOfHourToMinuts.interpretationToMinuts(partOfHour) + " минут " + this.getName() + " был " + place.getName());
+        System.out.println("Через " + partOfHourToMinuts.interpretationToMinuts(partOfHour) + " минут " + this.getName() + " был в" + place.getName());
     }
 }
