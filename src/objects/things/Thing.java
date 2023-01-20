@@ -25,10 +25,11 @@ public class Thing {
     }
 
     public int hashCode(){
-        return name.length();
+        return name.hashCode();
     }
 
     public String toString(){
-        return name;
+         return name;
     }
+
 }

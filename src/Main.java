@@ -1,3 +1,4 @@
+import objects.exceptions.*;
 import objects.persons.*;
 import objects.places.*;
 import objects.things.*;
@@ -27,6 +28,8 @@ public class Main {
         Thing uniform = new Thing("Мундир");
 
         // Места
+        PrisonRoomComponent.Door door = new PrisonRoomComponent.Door("Дверца");
+        PrisonRoomComponent.DirtyFloor dirtyFloor = new PrisonRoomComponent.DirtyFloor("Грязный, заплёванный пол");
         Place pavement = new Place("Мостовая");
         Place policeDepartment = new Place("Полицейское управление");
         Space air = new Space("Воздух", true);
@@ -43,7 +46,22 @@ public class Main {
 //---------------------------------------------------------------------------------------------------
 
         // Действия
-        policeman.howeverIngnoring(somebody);
+        neznayka.understand(false);
+        door.shutDownFor(neznayka);
+        neznayka.standUpFrom(dirtyFloor);
+
+        try {
+            neznayka.tryToOpen(door);
+        //    neznayka.tryToOpen(dirtyFloor);
+        }
+        catch (NotADoorException e){
+            System.out.println(e.getMessage());
+        }
+
+        door.doNotOpen();
+        neznayka.tryToEscape(door);
+
+        policeman.howeverIngnoring(neznayka);
         policeman.sitOnSomethingNextTo(cabin, driver);
         policeman.commandTo(driver);
         engine.buzz();

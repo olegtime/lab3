@@ -20,10 +20,10 @@ public class It {
     public boolean equals(It it){
         if (it == null) return false;
         if (this.getClass() != it.getClass()) return false;
-        if (name.equals(it.getName())) return true;
-        return false;
+        return name.equals(it.getName());
     }
 
+    // TODO
     public int hashCode(){
         return name.length();
     }
